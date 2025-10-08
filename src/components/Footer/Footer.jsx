@@ -115,7 +115,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/installation"
+                  to="/"
                   className="text-gray-400 max-sm:text-sm hover:underline"
                 >
                   Cookie policy
