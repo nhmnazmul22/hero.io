@@ -3,6 +3,7 @@ import Logo from "../../assets/logo.png";
 import Container from "../Layout/Container";
 import DropDownMenu from "./DropDownMenu";
 import MenuLinks from "./MenuLinks";
+import { Github, GithubIcon } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -22,7 +23,16 @@ const Navbar = () => {
             <MenuLinks></MenuLinks>
           </div>
           <div className="navbar-end">
-            <a className="btn">Button</a>
+            <Link
+              to="https://github.com/nhmnazmul22"
+              className="bg-linear hover:bg-linear-to-tl hover:scale-102 transition-all duration-300 flex gap-2 items-center py-2 px-4 rounded-sm text-white font-semibold"
+              target="_blank"
+            >
+              <span>
+                <Github />
+              </span>
+              <span>Contribute</span>
+            </Link>
           </div>
         </div>
       </Container>
