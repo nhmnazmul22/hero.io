@@ -2,6 +2,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@theme {
+  --color-dark-blue: #001931;
+}
+
 @layer base {
   .text-linear {
     @apply bg-linear-to-bl from-[#9F62F2] to-[#632EE3] bg-clip-text text-transparent;
