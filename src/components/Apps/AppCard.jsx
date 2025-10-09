@@ -1,10 +1,8 @@
 import { Download, Star } from "lucide-react";
-import React from "react";
 import { formatDownload } from "../../utilities/lib";
 import { Link } from "react-router";
 
 const AppCard = ({ app }) => {
-  console.log(app);
   return (
     <Link to={`/app/${app.id}`}>
       <div className="card bg-white shadow-sm hover:shadow-lg p-5 transition-all duration-300">
