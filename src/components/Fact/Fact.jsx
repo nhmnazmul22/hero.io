@@ -12,7 +12,7 @@ const Fact = () => {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-5 sm:gap-5 text-center mt-10">
             {facts.map((fact) => (
-              <FactInfo fact={fact}></FactInfo>
+              <FactInfo key={fact.id} fact={fact}></FactInfo>
             ))}
           </div>
         </div>
