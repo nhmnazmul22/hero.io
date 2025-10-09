@@ -1,6 +1,7 @@
-import React from "react";
-
+import useFilter from "../../hooks/useFilter";
 const FilterOptions = ({ appsLength = 0 }) => {
+  const { searchText, handleSetSearchText } = useFilter();
+
   return (
     <div className="flex justify-between items-center">
       <p className="text-2xl font-semibold">({appsLength}) Apps Found</p>
@@ -25,6 +26,8 @@ const FilterOptions = ({ appsLength = 0 }) => {
           type="search"
           className="grow placeholder:text-gray-500"
           placeholder="Search"
+          value={searchText}
+          onChange={(e) => handleSetSearchText(e.target.value)}
         />
       </label>
     </div>

@@ -21,7 +21,7 @@ const NotFound = ({ isButton = true }) => {
             </p>
             {isButton && (
               <div className="w-fit mx-auto mt-5">
-                <Button link="/">Go Back!</Button>
+                <Button link="/apps">Go Back!</Button>
               </div>
             )}
           </div>

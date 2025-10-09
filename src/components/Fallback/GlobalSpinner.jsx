@@ -2,7 +2,7 @@ import Logo from "../../assets/logo.png";
 
 const GlobalSpinner = () => {
   return (
-    <div className="min-h-screen absolute bg-white/98 w-full flex justify-center items-center">
+    <div className="min-h-screen absolute z-50 bg-white w-full flex justify-center items-center">
       <div className="flex flex-col justify-center items-center">
         <figure className="max-w-[100px] w-full h-auto animate-spin ">
           <img

@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
 import Home from "../pages/Home/Home";
-import Apps from "../pages/Apps/Apps";
 import AppDetails from "../pages/AppDetails/AppDetails";
 import Installation from "../pages/Installation/Installation";
 import NotFound from "../pages/Errors/NotFound";
+import { FilterContextProvider } from "../context/FilterContext";
+import AppsPage from "../pages/Apps/Apps";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/apps",
-        Component: Apps,
+        element: (
+          <FilterContextProvider>
+            <AppsPage></AppsPage>
+          </FilterContextProvider>
+        ),
         loader: () => fetch("/data/apps.json"),
       },
       {
