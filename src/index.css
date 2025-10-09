@@ -8,16 +8,16 @@
 
 @layer base {
   .text-linear {
-    @apply bg-linear-to-bl from-[#9F62F2] to-[#632EE3] bg-clip-text text-transparent;
+    @apply bg-linear-to-tl from-[#9F62F2] to-[#632EE3] bg-clip-text text-transparent;
   }
   .hover-text-liner {
-    @apply hover:bg-linear-to-bl hover:from-[#9F62F2] hover:to-[#632EE3] hover:bg-clip-text hover:text-transparent;
+    @apply hover:bg-linear-to-tl hover:from-[#9F62F2] hover:to-[#632EE3] hover:bg-clip-text hover:text-transparent;
   }
   .after-bg-liner {
-    @apply after:bg-linear-to-bl after:from-[#9F62F2] after:to-[#632EE3];
+    @apply after:bg-linear-to-tl after:from-[#9F62F2] after:to-[#632EE3];
   }
   .bg-linear {
-    @apply bg-linear-to-bl from-[#9F62F2] to-[#632EE3];
+    @apply bg-linear-to-tl from-[#9F62F2] to-[#632EE3];
   }
 }
 

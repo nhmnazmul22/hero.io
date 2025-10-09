@@ -20,7 +20,7 @@ const Navbar = () => {
           <div className="navbar-end">
             <Link
               to="https://github.com/nhmnazmul22"
-              className="bg-linear hover:bg-linear-to-tl hover:scale-102 transition-all duration-300 flex gap-2 items-center py-2 px-4 rounded-sm text-sm sm:text-base text-white font-semibold"
+              className="bg-linear hover:bg-linear-to-bl hover:scale-102 transition-all duration-300 flex gap-2 items-center py-2 px-4 rounded-sm text-sm sm:text-base text-white font-semibold"
               target="_blank"
             >
               <span>

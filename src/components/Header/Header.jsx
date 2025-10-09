@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../Layout/Container";
 import GooglePlayIcon from "../../assets/google-play-icon.png";
 import AppStoreIcon from "../../assets/app-store-icon.png";
@@ -21,26 +20,31 @@ const Header = () => {
               impact.
             </p>
             <div className="flex gap-2 items-center w-fit mx-auto mt-10">
-              <button className="btn md:btn-lg border border-[#D2D2D2] btn-ghost rounded-sm">
+              <button className="btn max-sm:btn-sm md:btn-lg border border-[#D2D2D2] btn-ghost rounded-sm">
                 <img
                   src={GooglePlayIcon}
                   alt="Google Play Icon"
-                  className="w-[26px] h-[30px]"
+                  className="w-[18px] h-[22px] sm:w-[26px] sm:h-[30px]"
                 />
                 <span>Google Play</span>
               </button>
-              <button className="btn md:btn-lg border border-[#D2D2D2] btn-ghost rounded-sm">
+              <button className="btn max-sm:btn-sm md:btn-lg border border-[#D2D2D2] btn-ghost rounded-sm">
                 <img
                   src={AppStoreIcon}
                   alt="App Store Icon"
-                  className="w-[32px] h-[32px]"
+                  className="w-[22px] h-[22px] sm:w-[32px] sm:h-[32px]"
                 />
                 <span>App Store</span>
               </button>
             </div>
           </div>
-          <figure>
-            <img src={HeaderImage} alt="" />
+          <figure className="w-full max-w-4xl mx-auto">
+            <img
+              src={HeaderImage}
+              alt="Header"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
           </figure>
         </div>
       </Container>
