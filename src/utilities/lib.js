@@ -1,10 +1,10 @@
-export const formatDownload = (downloadNum) => {
+export const abbreviateNumber = (downloadNum) => {
   let formatted = "0k";
 
   if (downloadNum < 1000000) {
-    formatted = `${downloadNum / 1000}k`;
-  } else if (downloadNum >= 1000) {
-    formatted = `${downloadNum / 1000000}k`;
+    formatted = `${Math.round(downloadNum / 1000)}K`;
+  } else if (downloadNum >= 1000000) {
+    formatted = `${Math.round(downloadNum / 1000000)}`;
   } else {
     formatted = downloadNum.toString();
   }

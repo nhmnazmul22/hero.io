@@ -12,7 +12,7 @@ function App() {
       <Navbar></Navbar>
       <main>
         {isNavigating && <GlobalSpinner />}
-        <Outlet></Outlet>
+        {!isNavigating && <Outlet></Outlet>}
       </main>
       <Footer></Footer>
     </>

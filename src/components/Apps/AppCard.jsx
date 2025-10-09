@@ -1,5 +1,5 @@
 import { Download, Star } from "lucide-react";
-import { formatDownload } from "../../utilities/lib";
+import { abbreviateNumber } from "../../utilities/lib";
 import { Link } from "react-router";
 
 const AppCard = ({ app }) => {
@@ -18,7 +18,7 @@ const AppCard = ({ app }) => {
           <div className="flex justify-between items-center mt-5">
             <div className="badge rounded-sm bg-[#F1F5E8] text-[#00D390]">
               <Download size={14} />{" "}
-              <span>{formatDownload(app.downloads)}</span>
+              <span>{abbreviateNumber(app.downloads)}</span>
             </div>
             <div className="badge rounded-sm bg-[#FFF0E1] text-[#FF8811]">
               <Star fill="currentColor" size={14} />{" "}
