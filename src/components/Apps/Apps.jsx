@@ -9,13 +9,13 @@ const Apps = ({ apps }) => {
       <Container>
         <div className="">
           <div className="text-center">
-            <h2 className="text-5xl font-bold mb-3">Trending Apps</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-3">Trending Apps</h2>
+            <p className="text-base sm:text-lg text-gray-600">
               Explore All Trending Apps on the Market developed by us
             </p>
           </div>
           {apps.length > 0 ? (
-            <div className="grid grid-cols-4 gap-5 mt-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 gap-5 mt-10">
               {apps.map((app) => (
                 <AppCard app={app}></AppCard>
               ))}
