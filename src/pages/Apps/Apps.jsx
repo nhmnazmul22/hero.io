@@ -50,7 +50,10 @@ const AppsPage = () => {
           </div>
 
           <div className="">
-            <FilterOptions appsLength={filteredApps.length}></FilterOptions>
+            <FilterOptions
+              appsLength={filteredApps.length}
+              isInput={true}
+            ></FilterOptions>
             <section className="pt-10">
               {loading && <CardSkeleton length={4}></CardSkeleton>}
               {!loading && filteredApps.length > 0 && (
