@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="col-span-12 lg:col-span-3 space-y-2 max-w-sm">
             <Logo logoTextClass="text-white"></Logo>
             <p className="text-gray-400 text-sm">
-              At HERO.IO, we craft innovative apps designed to make everyday
+              At PRO Apps, we craft innovative apps designed to make everyday
               life simpler, smarter, and more exciting.Our goal is to turn your
               ideas into digital experiences that truly make an impact.
             </p>
