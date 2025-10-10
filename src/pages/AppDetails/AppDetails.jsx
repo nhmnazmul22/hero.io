@@ -2,11 +2,16 @@ import Container from "../../components/Layout/Container";
 import AppInfo from "../../components/AppDetails/AppInfo";
 import { useLoaderData, useParams } from "react-router";
 import Chart from "../../components/AppDetails/Chart";
+import NotFound from "../../components/Fallback/NotFound";
 
 const AppDetails = () => {
   const apps = useLoaderData();
   const { id } = useParams();
   const app = apps.find((app) => app.id === id);
+
+  if (!app) {
+    return <NotFound></NotFound>;
+  }
 
   return (
     <section className="py-20">

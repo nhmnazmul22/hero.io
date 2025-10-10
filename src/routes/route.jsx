@@ -45,6 +45,7 @@ const router = createBrowserRouter([
             </InstalledContextProvider>
           </FilterContextProvider>
         ),
+        loader: () => fetch("/data/apps.json"),
       },
       {
         path: "*",

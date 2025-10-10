@@ -8,9 +8,9 @@ const useFilter = () => {
     throw new Error("useFilter must be used within a FilterProvider");
   }
 
-  const { searchText, handleSetSearchText } = context;
+  const { searchText, handleSetSearchText, type, handleSetType } = context;
 
-  return { searchText, handleSetSearchText };
+  return { searchText, handleSetSearchText, type, handleSetType };
 };
 
 export default useFilter;

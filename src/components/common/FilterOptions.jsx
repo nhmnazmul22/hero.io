@@ -1,6 +1,6 @@
 import useFilter from "../../hooks/useFilter";
 const FilterOptions = ({ appsLength = 0, isInput }) => {
-  const { searchText, handleSetSearchText } = useFilter();
+  const { searchText, handleSetSearchText, handleSetType } = useFilter();
 
   return (
     <div className="flex justify-between items-center">
@@ -33,10 +33,14 @@ const FilterOptions = ({ appsLength = 0, isInput }) => {
           />
         </label>
       ) : (
-        <select defaultValue="Short By Downloads" className="select">
-          <option>Short By Downloads</option>
-          <option>High-Low</option>
-          <option>Low-High</option>
+        <select
+          onChange={(e) => handleSetType(e.target.value)}
+          defaultValue=""
+          className="select"
+        >
+          <option value="">Short By Downloads</option>
+          <option value="high-low">High-Low</option>
+          <option value="low-high">Low-High</option>
         </select>
       )}
     </div>

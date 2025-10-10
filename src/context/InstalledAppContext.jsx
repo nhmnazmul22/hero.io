@@ -1,10 +1,11 @@
 import { createContext, useEffect, useState } from "react";
 import { getData } from "../utilities/storage";
-import { fetchApps } from "../utilities/lib";
+import { useLoaderData } from "react-router";
 
 const InstalledContext = createContext(null);
 
 export const InstalledContextProvider = ({ children }) => {
+  const appsData = useLoaderData();
   const [apps, setApps] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,27 +18,23 @@ export const InstalledContextProvider = ({ children }) => {
     setApps(newApps);
   };
 
-  const handleFetchInstalledApps = async () => {
-    setLoading(true);
-
-    const installedAppsId = getData();
-    const allApps = await fetchApps();
-    const installedApps = [];
-
-    if (installedAppsId.length > 0) {
-      allApps.forEach((app) => {
-        if (installedAppsId.includes(app.id)) {
-          installedApps.push(app);
-        }
-      });
-    }
-    setApps(installedApps);
-    setLoading(false);
-  };
-
   useEffect(() => {
-    handleFetchInstalledApps();
-  }, []);
+    (async () => {
+      setLoading(true);
+      const installedAppsId = getData();
+      const installedApps = [];
+
+      if (installedAppsId.length > 0) {
+        appsData.forEach((app) => {
+          if (installedAppsId.includes(app.id)) {
+            installedApps.push(app);
+          }
+        });
+      }
+      setApps(installedApps);
+      setLoading(false);
+    })();
+  }, [appsData]);
 
   return (
     <InstalledContext.Provider
