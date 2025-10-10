@@ -3,7 +3,6 @@ import InstalledContext from "../context/InstalledAppContext";
 
 const useInstalledApps = () => {
   const context = useContext(InstalledContext);
-  console.log(context);
 
   if (!context) {
     throw new Error(
@@ -11,9 +10,9 @@ const useInstalledApps = () => {
     );
   }
 
-  const { apps, handleAddApps } = context;
+  const { apps, handleAddApps, loading } = context;
 
-  return { apps, handleAddApps };
+  return { apps, handleAddApps, loading };
 };
 
 export default useInstalledApps;

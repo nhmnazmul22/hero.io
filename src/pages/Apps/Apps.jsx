@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router";
-import FilterOptions from "../../components/Apps/FilterOptions";
+import FilterOptions from "../../components/Common/FilterOptions";
 import Container from "../../components/Layout/Container";
 import Apps from "../../components/Apps/Apps";
 import useFilter from "../../hooks/useFilter";

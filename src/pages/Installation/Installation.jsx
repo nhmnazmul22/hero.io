@@ -1,14 +1,14 @@
 import React from "react";
 import Container from "../../components/Layout/Container";
 import useInstalledApps from "../../hooks/useInstalledApps";
-import FilterOptions from "../../components/Apps/FilterOptions";
+import FilterOptions from "../../components/Common/FilterOptions";
 import AppCard from "../../components/Installation/AppCard";
 import NotFound from "../../components/Fallback/NotFound";
+import LineSkeleton from "../../components/Fallback/LineSkeleton";
 
 const Installation = () => {
-  const { apps } = useInstalledApps();
+  const { apps, loading } = useInstalledApps();
 
-  console.log(apps);
   return (
     <section className="py-20">
       <Container>
@@ -26,14 +26,21 @@ const Installation = () => {
               appsLength={apps.length}
               isInput={false}
             ></FilterOptions>
-            <section className="pt-10">
-              <AppCard></AppCard>
-              {/* {apps.length > 0 ? (
-                apps.map((app) => <AppCard app={app}></AppCard>)
-              ) : (
-                <NotFound isButton={false}></NotFound>
-              )} */}
-            </section>
+            {!loading ? (
+              <section className="pt-10">
+                {apps.length > 0 ? (
+                  <div className="grid grid-cols-1 gap-5">
+                    {apps.map((app) => (
+                      <AppCard key={app.id} app={app}></AppCard>
+                    ))}
+                  </div>
+                ) : (
+                  <NotFound isButton={false}></NotFound>
+                )}
+              </section>
+            ) : (
+              <LineSkeleton length={3}></LineSkeleton>
+            )}
           </div>
         </div>
       </Container>

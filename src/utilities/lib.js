@@ -11,3 +11,13 @@ export const abbreviateNumber = (downloadNum) => {
 
   return abbreviate;
 };
+
+export const fetchApps = async () => {
+  try {
+    const res = await fetch("/data/apps.json");
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    throw new Error("Error in fetching Apps", err?.message);
+  }
+};

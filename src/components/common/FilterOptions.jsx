@@ -1,6 +1,5 @@
 import useFilter from "../../hooks/useFilter";
 const FilterOptions = ({ appsLength = 0, isInput }) => {
-  console.log(isInput);
   const { searchText, handleSetSearchText } = useFilter();
 
   return (

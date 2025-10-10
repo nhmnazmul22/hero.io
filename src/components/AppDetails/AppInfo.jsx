@@ -4,6 +4,7 @@ import StarIconImg from "../../assets/icon-ratings.png";
 import ReviewIconImg from "../../assets/icon-review.png";
 import { abbreviateNumber } from "../../utilities/lib";
 import useInstalledApps from "../../hooks/useInstalledApps";
+import { setData } from "../../utilities/storage";
 
 const AppInfo = ({ app }) => {
   const [isInstalled, setIsInstalled] = useState(false);
@@ -12,6 +13,7 @@ const AppInfo = ({ app }) => {
   const handleInstall = () => {
     setIsInstalled(true);
     handleAddApps(app);
+    setData(app.id);
   };
 
   useEffect(() => {
