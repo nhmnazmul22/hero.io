@@ -3,7 +3,7 @@ import Container from "../Layout/Container";
 import DropDownMenu from "./DropDownMenu";
 import MenuLinks from "./MenuLinks";
 import { Github, GithubIcon } from "lucide-react";
-import Logo from "../Common/Logo";
+import Logo from "../Commons/Logo";
 
 const Navbar = () => {
   return (
