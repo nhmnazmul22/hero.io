@@ -1,7 +1,7 @@
 import React from "react";
 import NotFundImage from "../../assets/App-Error.png";
 import Container from "../Layout/Container";
-import Button from "../common/Button";
+import Button from "../Common/Button";
 
 const NotFound = ({ isButton = true }) => {
   return (

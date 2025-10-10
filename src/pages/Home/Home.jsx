@@ -3,7 +3,7 @@ import Fact from "../../components/Fact/Fact";
 import { useLoaderData } from "react-router";
 import Apps from "../../components/Apps/Apps";
 import Container from "../../components/Layout/Container";
-import Button from "../../components/common/Button";
+import Button from "../../components/Common/Button";
 
 const Home = () => {
   const apps = useLoaderData();

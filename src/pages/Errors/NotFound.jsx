@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../../components/Layout/Container";
 import NotFoundImg from "../../assets/error-404.png";
-import Button from "../../components/common/Button";
+import Button from "../../components/Common/Button";
 
 const NotFound = () => {
   return (

@@ -39,9 +39,11 @@ const router = createBrowserRouter([
       {
         path: "/installation",
         element: (
-          <InstalledContextProvider>
-            <Installation></Installation>
-          </InstalledContextProvider>
+          <FilterContextProvider>
+            <InstalledContextProvider>
+              <Installation></Installation>
+            </InstalledContextProvider>
+          </FilterContextProvider>
         ),
       },
       {

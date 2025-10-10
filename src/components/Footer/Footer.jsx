@@ -1,10 +1,10 @@
 import React from "react";
 import Container from "../Layout/Container";
-import Logo from "../common/Logo";
+import Logo from "../Common/Logo";
 import { Link } from "react-router";
 import { Github, Instagram, Linkedin, Twitter } from "lucide-react";
 import BottomFooter from "./BottomFooter";
-import SocialIcon from "../common/SocialIcon";
+import SocialIcon from "../Common/SocialIcon";
 
 const Footer = () => {
   return (
