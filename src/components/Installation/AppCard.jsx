@@ -3,9 +3,9 @@ import React from "react";
 
 const AppCard = ({ app }) => {
   return (
-    <div className="w-full max-h-[110px] rounded-sm p-5 flex justify-between items-center bg-white">
-      <div className="flex gap-5 justify-center items-center">
-        <figure className="w-[80px] h-[80px] rounded-lg overflow-hidden">
+    <div className="w-full sm:max-h-[110px] rounded-sm p-5 flex max-sm:flex-col gap-y-5 sm:gap-10 justify-between sm:items-center bg-white">
+      <div className="flex gap-5 justify-center sm:items-center">
+        <figure className="max-w-[80px] max-h-[80px] rounded-lg overflow-hidden">
           <img
             src="https://i.ibb.co.com/4gpK8bYr/app-2.webp"
             alt=""
@@ -13,7 +13,7 @@ const AppCard = ({ app }) => {
           />
         </figure>
         <div className="flex flex-col gap-3">
-          <h4 className="text-xl font-medium text-dark-blue">
+          <h4 className="text-lg sm:text-xl font-medium text-dark-blue">
             WeatherGo: Live Weather Forecasts with Radar & Alerts
           </h4>
           <div className="flex gap-5 items-center">
