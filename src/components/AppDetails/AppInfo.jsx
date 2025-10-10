@@ -1,10 +1,28 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import DownloadIconImg from "../../assets/icon-downloads.png";
 import StarIconImg from "../../assets/icon-ratings.png";
 import ReviewIconImg from "../../assets/icon-review.png";
 import { abbreviateNumber } from "../../utilities/lib";
+import useInstalledApps from "../../hooks/useInstalledApps";
 
 const AppInfo = ({ app }) => {
+  const [isInstalled, setIsInstalled] = useState(false);
+  const { apps, handleAddApps } = useInstalledApps();
+
+  const handleInstall = () => {
+    setIsInstalled(true);
+    handleAddApps(app);
+  };
+
+  useEffect(() => {
+    if (apps.length > 0) {
+      const installedApp = apps.find((a) => a.id === app.id);
+      if (installedApp) {
+        setIsInstalled(true);
+      }
+    }
+  }, [app, apps]);
+
   return (
     <div className="flex max-lg:flex-col gap-10 items-start">
       <figure className="max-w-[350px] max-h-[350px] w-full h-full rounded-sm overflow-hidden">
@@ -52,8 +70,14 @@ const AppInfo = ({ app }) => {
             </h5>
           </div>
         </div>
-        <button className="btn btn-lg bg-[#00D390] text-white rounded-sm">
-          Install Now ({`${Math.round(app.size)}MB`})
+        <button
+          onClick={handleInstall}
+          className={`btn btn-lg bg-[#00D390] text-white rounded-sm`}
+          disabled={isInstalled}
+        >
+          {isInstalled
+            ? "Installed"
+            : `Install Now (${Math.round(app.size)}MB)`}
         </button>
       </div>
     </div>

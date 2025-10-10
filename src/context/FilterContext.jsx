@@ -1,11 +1,6 @@
 import { createContext, useState } from "react";
 
-const initialValue = {
-  searchText: "",
-  handleSetSearchText: () => {},
-};
-
-const FilterContext = createContext(initialValue);
+const FilterContext = createContext(null);
 
 export const FilterContextProvider = ({ children }) => {
   const [searchText, setSearchText] = useState("");

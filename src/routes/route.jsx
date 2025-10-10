@@ -6,6 +6,7 @@ import Installation from "../pages/Installation/Installation";
 import NotFound from "../pages/Errors/NotFound";
 import { FilterContextProvider } from "../context/FilterContext";
 import AppsPage from "../pages/Apps/Apps";
+import { InstalledContextProvider } from "../context/InstalledAppContext";
 
 const router = createBrowserRouter([
   {
@@ -28,12 +29,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/app/:id",
-        Component: AppDetails,
+        element: (
+          <InstalledContextProvider>
+            <AppDetails></AppDetails>
+          </InstalledContextProvider>
+        ),
         loader: () => fetch("/data/apps.json"),
       },
       {
         path: "/installation",
-        Component: Installation,
+        element: (
+          <InstalledContextProvider>
+            <Installation></Installation>
+          </InstalledContextProvider>
+        ),
       },
       {
         path: "*",
