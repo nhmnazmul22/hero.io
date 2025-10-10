@@ -2,6 +2,7 @@ import { Download, Star } from "lucide-react";
 import { abbreviateNumber } from "../../utilities/lib";
 import useInstalledApps from "../../hooks/useInstalledApps";
 import { removeData } from "../../utilities/storage";
+import toast from "react-hot-toast";
 
 const AppCard = ({ app }) => {
   const { handleRemoveApp } = useInstalledApps();
@@ -9,6 +10,7 @@ const AppCard = ({ app }) => {
   const handleUninstall = () => {
     handleRemoveApp(app.id);
     removeData(app.id);
+    toast.success(`${app.title} uninstalled`);
   };
 
   return (

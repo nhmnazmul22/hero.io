@@ -5,6 +5,7 @@ import ReviewIconImg from "../../assets/icon-review.png";
 import { abbreviateNumber } from "../../utilities/lib";
 import useInstalledApps from "../../hooks/useInstalledApps";
 import { setData } from "../../utilities/storage";
+import toast from "react-hot-toast";
 
 const AppInfo = ({ app }) => {
   const [isInstalled, setIsInstalled] = useState(false);
@@ -14,6 +15,7 @@ const AppInfo = ({ app }) => {
     setIsInstalled(true);
     handleAddApps(app);
     setData(app.id);
+    toast.success(`${app.title} installed successful`);
   };
 
   useEffect(() => {
