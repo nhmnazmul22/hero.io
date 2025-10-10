@@ -6,10 +6,15 @@ const InstalledContext = createContext(null);
 
 export const InstalledContextProvider = ({ children }) => {
   const [apps, setApps] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleAddApps = (newAppData) => {
     setApps((prevApps) => [...prevApps, newAppData]);
+  };
+
+  const handleRemoveApp = (appId) => {
+    const newApps = apps.filter((app) => app.id !== appId);
+    setApps(newApps);
   };
 
   const handleFetchInstalledApps = async () => {
@@ -35,7 +40,9 @@ export const InstalledContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <InstalledContext.Provider value={{ apps, loading, handleAddApps }}>
+    <InstalledContext.Provider
+      value={{ apps, loading, handleAddApps, handleRemoveApp }}
+    >
       {children}
     </InstalledContext.Provider>
   );

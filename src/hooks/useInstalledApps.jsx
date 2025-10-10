@@ -10,9 +10,9 @@ const useInstalledApps = () => {
     );
   }
 
-  const { apps, handleAddApps, loading } = context;
+  const { apps, handleAddApps, loading, handleRemoveApp } = context;
 
-  return { apps, handleAddApps, loading };
+  return { apps, handleAddApps, loading, handleRemoveApp };
 };
 
 export default useInstalledApps;

@@ -26,7 +26,9 @@ const Installation = () => {
               appsLength={apps.length}
               isInput={false}
             ></FilterOptions>
-            {!loading ? (
+            {loading ? (
+              <LineSkeleton length={3}></LineSkeleton>
+            ) : (
               <section className="pt-10">
                 {apps.length > 0 ? (
                   <div className="grid grid-cols-1 gap-5">
@@ -38,8 +40,6 @@ const Installation = () => {
                   <NotFound isButton={false}></NotFound>
                 )}
               </section>
-            ) : (
-              <LineSkeleton length={3}></LineSkeleton>
             )}
           </div>
         </div>
